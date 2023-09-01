@@ -1,5 +1,7 @@
 package com.areeb.hussle.ui.screens.home.screen
 
+import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -7,63 +9,99 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
 import com.areeb.hussle.R
+import com.areeb.hussle.ui.common.components.status_color_changer
 import com.areeb.hussle.ui.theme.HussleTheme
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun home(navHostController: NavHostController) {
     HussleTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .statusBarsPadding(),
-        ) {
-            greetUser()
-            searchBar()
-        }
-    }
-}
+        status_color_changer(color = colorResource(id = R.color.searchBar))
+        Scaffold(
+            topBar = {
+                TopAppBar(
+                    navigationIcon = {
+                        IconButton(
+                            onClick = {
+                            },
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.baseline_menu_24),
+                                contentDescription = "Hello",
+                            )
+                        }
+                    },
 
-@Composable
-fun greetUser() {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(20.dp),
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.man),
-            contentDescription = "image",
-            modifier = Modifier
-                .padding(start = 1.dp)
-                .width(68.dp)
-                .height(58.dp),
+                    actions = {
+                        IconButton(
+                            onClick = { Log.e(TAG, "alarm") },
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.baseline_bedtime_24),
+                                contentDescription = "image",
+                            )
+                        }
 
-        )
-        Text(
-            text = ContextCompat.getString(LocalContext.current, R.string.greetings),
-            fontSize = 24.sp,
-            modifier = Modifier.padding(top = 18.dp, start = 20.dp),
-            fontStyle = FontStyle.Normal,
-            fontFamily = FontFamily.Default,
+                        IconButton(
+                            onClick = { Log.e(TAG, "alarm") },
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.man),
+                                contentDescription = "image",
+                            )
+                        }
+                    },
+
+                    title = {
+                        Text(text = "Hussle", fontFamily = FontFamily.Serif, fontSize = 30.sp)
+                    },
+                    colors = TopAppBarDefaults.largeTopAppBarColors(colorResource(id = R.color.searchBar)),
+
+                )
+            },
+            floatingActionButton = {
+                FloatingActionButton(
+                    onClick = { /*TODO*/ },
+                    containerColor = colorResource(id = R.color.searchBar),
+
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.broken_heart),
+                        contentDescription = "floating Button",
+                    )
+                }
+            },
+
+            content = {
+                Column(modifier = Modifier.padding(top = 60.dp)) {
+                    searchBar()
+                }
+            },
+
         )
     }
 }
@@ -73,9 +111,9 @@ fun greetUser() {
 fun searchBar() {
     Card(
         modifier = Modifier
-            .height(80.dp)
+            .requiredHeight(100.dp)
             .fillMaxWidth()
-            .padding(top = 10.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+            .padding(top = 30.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
             .fillMaxWidth(),
         colors = CardDefaults.cardColors(colorResource(id = R.color.searchBar)),
         elevation = CardDefaults.cardElevation(1.dp).also {
@@ -92,7 +130,9 @@ fun searchBar() {
             Text(
                 text = "Search Here",
 
-                modifier = Modifier.padding(start = 10.dp, top = 14.dp).weight(1f),
+                modifier = Modifier
+                    .padding(start = 10.dp, top = 14.dp)
+                    .weight(1f),
             )
 
             /*
@@ -110,3 +150,5 @@ fun searchBar() {
         }
     }
 }
+
+private const val TAG = "Home Screen"

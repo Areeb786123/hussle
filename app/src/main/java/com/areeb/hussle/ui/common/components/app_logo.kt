@@ -13,7 +13,7 @@ import com.areeb.hussle.R
 @Composable
 fun appLogo(size: Dp = 146.dp) {
     Image(
-        painter = painterResource(id = R.drawable.baseline_local_fire_department_24),
+        painter = painterResource(id = R.drawable.baseline_arrow_back_24),
         contentDescription = "icon",
         modifier = Modifier.padding(10.dp).size(size = size),
     )
