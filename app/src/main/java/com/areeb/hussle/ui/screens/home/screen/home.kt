@@ -77,7 +77,12 @@ fun home(navHostController: NavHostController) {
                     },
 
                     title = {
-                        Text(text = "Hussle", fontFamily = FontFamily.Serif, fontSize = 30.sp)
+                        Text(
+                            text = "Hussle",
+                            fontFamily = FontFamily.Serif,
+                            fontSize = 30.sp,
+                            color = colorResource(id = R.color.black),
+                        )
                     },
                     colors = TopAppBarDefaults.largeTopAppBarColors(colorResource(id = R.color.searchBar)),
 
@@ -133,6 +138,7 @@ fun searchBar() {
                 modifier = Modifier
                     .padding(start = 10.dp, top = 14.dp)
                     .weight(1f),
+                color = colorResource(id = R.color.black),
             )
 
             /*
