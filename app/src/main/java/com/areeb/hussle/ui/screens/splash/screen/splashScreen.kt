@@ -7,22 +7,21 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavHostController
 import com.areeb.hussle.R
 import com.areeb.hussle.ui.common.components.basics.appLogo
 import com.areeb.hussle.ui.theme.HussleTheme
-import com.areeb.hussle.utils.CommonString.Navigations.Companion.HOME
+import com.areeb.hussle.utils.CommonString
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(navHostController: NavHostController) {
     HussleTheme() {
-        val navHostController = rememberNavController()
         colorResource(id = R.color.blue)
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             LaunchedEffect(key1 = Unit) {
                 delay(2000)
-                navHostController.navigate(HOME)
+                navHostController.navigate(CommonString.Navigations.HOME)
             }
             appLogo()
         }

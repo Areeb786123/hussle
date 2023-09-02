@@ -3,41 +3,45 @@ package com.areeb.hussle.ui.navigations
 import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.navigation.NavDestination
-import androidx.navigation.NavDestination.Companion.hierarchy
-import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.compose.ui.res.colorResource
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
-import com.areeb.hussle.ui.common.components.bottomNavigation.BottomNavigation
+import com.areeb.hussle.R
+import com.areeb.hussle.utils.CommonString
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun BottomBar() {
-    val navHostController = rememberNavController()
-    Scaffold(bottomBar = {
-        HussleNavigationBar(navHostController = navHostController)
-    }) {
-        BottomNavGraph(navHostController = navHostController)
-    }
-}
-
-@Composable
 fun HussleNavigationBar(navHostController: NavHostController) {
-    val screenList = listOf(BottomNavigation.Home, BottomNavigation.Settings)
+    val screenList = listOf(
+        BottomNaModel(
+            title = "home",
+            routes = CommonString.Navigations.HOME,
+            selectedImage = Icons.Default.Home,
+            unSelectedImage = Icons.Outlined.Home,
+        ),
+        BottomNaModel(
+            title = "setting",
+            routes = CommonString.Navigations.SETTINGS,
+            selectedImage = Icons.Default.Settings,
+            unSelectedImage = Icons.Outlined.Settings,
+        ),
+    )
 
-    val navBackStackEntry by navHostController.currentBackStackEntryAsState()
-    val currentDestination = navBackStackEntry?.destination
+    val navBackStackEntry = navHostController.currentBackStackEntry
 
-    androidx.compose.material3.NavigationBar() {
+    androidx.compose.material3.NavigationBar(containerColor = colorResource(id = R.color.searchBar)) {
         screenList.forEach {
+            val currentDestination = navBackStackEntry
             AddNavigationItem(
                 screenItem = it,
                 currentDestination = currentDestination,
@@ -47,28 +51,27 @@ fun HussleNavigationBar(navHostController: NavHostController) {
     }
 }
 
+/*
+* Added Row Scope before AddNavigation function because NavigationBarItem
+* worked under RowScope Only
+* */
 @Composable
 fun RowScope.AddNavigationItem(
-    screenItem: BottomNavigation,
-    currentDestination: NavDestination?,
+    screenItem: BottomNaModel,
+    currentDestination: NavBackStackEntry?,
     navController: NavHostController,
 ) {
     NavigationBarItem(
-        selected = currentDestination?.hierarchy?.any {
-            it.route == screenItem.route
-        } == true,
+        selected = screenItem.routes == currentDestination?.destination?.route,
         onClick = {
             try {
-                navController.navigate(screenItem.route) {
-                    popUpTo(navController.graph.findStartDestination().id)
-                    launchSingleTop = true
-                }
+                navController.navigate(screenItem.routes)
             } catch (e: Exception) {
                 Log.e("errorXXX", e.message.toString())
             }
         },
         icon = {
-            Icon(imageVector = screenItem.icon, contentDescription = "image")
+            Icon(imageVector = screenItem.selectedImage, contentDescription = "image")
         },
     )
 }
