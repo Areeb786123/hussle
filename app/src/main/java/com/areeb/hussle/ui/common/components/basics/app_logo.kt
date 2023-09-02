@@ -1,4 +1,4 @@
-package com.areeb.hussle.ui.common.components
+package com.areeb.hussle.ui.common.components.basics
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding

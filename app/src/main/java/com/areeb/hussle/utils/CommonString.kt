@@ -6,6 +6,7 @@ interface CommonString {
         companion object {
             const val HOME = "home"
             const val SPLASH_SCREEN = "splashScreen"
+            const val SETTINGS = "Setting"
         }
     }
 }

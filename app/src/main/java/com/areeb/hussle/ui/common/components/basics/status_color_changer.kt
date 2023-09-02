@@ -1,4 +1,4 @@
-package com.areeb.hussle.ui.common.components
+package com.areeb.hussle.ui.common.components.basics
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect

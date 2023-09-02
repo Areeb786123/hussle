@@ -1,12 +1,4 @@
 
-h
-8app/src/main/java/com/areeb/hussle/utils/CommonString.kt,b/5/b5e6432e7e6070f9d5efc8094acb0756b2e004b9
-b
-2app/src/main/java/com/areeb/hussle/MainActivity.kt,8/8/881db89cb048b94eac7b06a8b69691c7db30beba
-d
-4app/src/main/java/com/areeb/hussle/ui/theme/Color.kt,3/0/3098fe1aa61475d1e628554994791534a5fa6965
-Å
-Q.idea/sonarlint/securityhotspotstore/c/8/c856bfa117a7066ae464adfc66aee6cde2641f3b,8/c/8c83232fa3aff21faecbe6d874dabb7145435a56
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
 Å
@@ -17,17 +9,19 @@ Q.idea/sonarlint/securityhotspotstore/3/0/3098fe1aa61475d1e628554994791534a5fa69
 ,.idea/inspectionProfiles/Project_Default.xml,4/9/496a238a6afa168dbaf6efd37bb459331589579c
 w
 G.idea/sonarlint/issuestore/8/8/881db89cb048b94eac7b06a8b69691c7db30beba,8/b/8bae0bce4a54c263878f8fdf3cb87d883d13dd8a
-Å
-Q.idea/sonarlint/securityhotspotstore/b/5/b5e6432e7e6070f9d5efc8094acb0756b2e004b9,e/a/ea512c620f1301192ffa9dea99f294758891377f
 w
 G.idea/sonarlint/issuestore/3/0/3098fe1aa61475d1e628554994791534a5fa6965,4/a/4ad4a9abeca0a91a88fb4eb8ff1b048e95353c03
-w
-G.idea/sonarlint/issuestore/f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164,3/1/31073cf3a12b082ef2fe0f9403916a4db3811c89
-Å
-Q.idea/sonarlint/securityhotspotstore/f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164,9/b/9b9af03329b517cdd460b1ee115f2bb0ec341883
-w
-G.idea/sonarlint/issuestore/b/5/b5e6432e7e6070f9d5efc8094acb0756b2e004b9,f/6/f6cb534708fb4164d6ef2ec22b194cc68788524a
 Å
 Q.idea/sonarlint/securityhotspotstore/8/8/881db89cb048b94eac7b06a8b69691c7db30beba,e/e/ee9909236b80176d4e4011a31c91b5765bebb616
-w
-G.idea/sonarlint/issuestore/c/8/c856bfa117a7066ae464adfc66aee6cde2641f3b,0/a/0ada0142644a855102d2bc1dc01d67903f0d540d
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+d
+4app/src/main/java/com/areeb/hussle/ui/theme/Color.kt,3/0/3098fe1aa61475d1e628554994791534a5fa6965
+d
+4app/src/main/java/com/areeb/hussle/ui/theme/Theme.kt,6/a/6a371aad9e15444acaa5dc429504ac207f33df6c
+c
+3app/src/main/java/com/areeb/hussle/ui/theme/Type.kt,b/b/bb41acf33dc490b36f00d3d8c3ac3daf77f20d30
+i
+9app/src/main/java/com/areeb/hussle/ui/common/fun/Toast.kt,9/8/98b0f9ca437937281075d1df67f5988be72e748f
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164

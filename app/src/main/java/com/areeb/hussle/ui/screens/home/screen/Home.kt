@@ -32,13 +32,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.areeb.hussle.R
-import com.areeb.hussle.ui.common.components.status_color_changer
+import com.areeb.hussle.ui.common.components.basics.status_color_changer
+import com.areeb.hussle.ui.navigations.HussleNavigationBar
 import com.areeb.hussle.ui.theme.HussleTheme
+
+private const val TAG = "Home Screen"
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun home(navHostController: NavHostController) {
+fun Home(navHostController: NavHostController) {
     HussleTheme {
         status_color_changer(color = colorResource(id = R.color.searchBar))
         Scaffold(
@@ -107,6 +110,10 @@ fun home(navHostController: NavHostController) {
                 }
             },
 
+            bottomBar = {
+                HussleNavigationBar(navHostController = navHostController)
+            },
+
         )
     }
 }
@@ -156,5 +163,3 @@ fun searchBar() {
         }
     }
 }
-
-private const val TAG = "Home Screen"
