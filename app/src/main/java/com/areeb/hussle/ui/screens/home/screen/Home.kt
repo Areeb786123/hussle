@@ -30,10 +30,12 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.areeb.hussle.R
 import com.areeb.hussle.ui.common.components.basics.status_color_changer
 import com.areeb.hussle.ui.navigations.HussleNavigationBar
+import com.areeb.hussle.ui.screens.home.viewModels.HomeViewModels
 import com.areeb.hussle.ui.theme.HussleTheme
 
 private const val TAG = "Home Screen"
@@ -43,6 +45,8 @@ private const val TAG = "Home Screen"
 @Composable
 fun Home(navHostController: NavHostController) {
     HussleTheme {
+        val homeViewModels: HomeViewModels = viewModel()
+        homeViewModels.getAllProducts()
         status_color_changer(color = colorResource(id = R.color.searchBar))
         Scaffold(
             topBar = {

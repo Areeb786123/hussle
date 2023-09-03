@@ -8,13 +8,7 @@ Q.idea/sonarlint/securityhotspotstore/3/0/3098fe1aa61475d1e628554994791534a5fa69
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4/9/496a238a6afa168dbaf6efd37bb459331589579c
 w
-G.idea/sonarlint/issuestore/8/8/881db89cb048b94eac7b06a8b69691c7db30beba,8/b/8bae0bce4a54c263878f8fdf3cb87d883d13dd8a
-w
 G.idea/sonarlint/issuestore/3/0/3098fe1aa61475d1e628554994791534a5fa6965,4/a/4ad4a9abeca0a91a88fb4eb8ff1b048e95353c03
-Å
-Q.idea/sonarlint/securityhotspotstore/8/8/881db89cb048b94eac7b06a8b69691c7db30beba,e/e/ee9909236b80176d4e4011a31c91b5765bebb616
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 d
 4app/src/main/java/com/areeb/hussle/ui/theme/Color.kt,3/0/3098fe1aa61475d1e628554994791534a5fa6965
 d
@@ -23,5 +17,7 @@ c
 3app/src/main/java/com/areeb/hussle/ui/theme/Type.kt,b/b/bb41acf33dc490b36f00d3d8c3ac3daf77f20d30
 i
 9app/src/main/java/com/areeb/hussle/ui/common/fun/Toast.kt,9/8/98b0f9ca437937281075d1df67f5988be72e748f
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+Ü
+Vapp/src/main/java/com/areeb/hussle/ui/common/components/basics/status_color_changer.kt,e/2/e29926ec4d049cc7461a417ea5b347da965816f5
+z
+Japp/src/main/java/com/areeb/hussle/ui/common/components/basics/app_logo.kt,3/c/3cb923d8c93fa76091e7f87a434efe16486a1e6b

@@ -9,4 +9,8 @@ interface CommonString {
             const val SETTINGS = "Setting"
         }
     }
+
+    companion object {
+        const val ERROR = "error"
+    }
 }
