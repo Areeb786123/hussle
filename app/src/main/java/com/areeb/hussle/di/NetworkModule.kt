@@ -1,8 +1,6 @@
 package com.areeb.hussle.di
 
 import com.areeb.hussle.data.ApiConstants.BASE_URL
-import com.areeb.hussle.data.IRemoteOperations
-import com.areeb.hussle.data.RemoteOperations
 import com.areeb.hussle.data.network.remote.StoresApi
 import dagger.Module
 import dagger.Provides
@@ -23,8 +21,9 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
+    @Provides
+    @Singleton
     fun provideStoreApi(retrofit: Retrofit): StoresApi {
         return retrofit.create(StoresApi::class.java)
     }
-
 }

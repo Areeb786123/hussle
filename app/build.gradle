@@ -85,6 +85,8 @@ dependencies {
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
 
+    implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
+
     //life cycle viewModels
     def lifecycle_version = "2.6.1"
 
@@ -99,6 +101,9 @@ dependencies {
 
     // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    implementation "com.github.bumptech.glide:compose:1.0.0-alpha.5"
+
 
 
 }

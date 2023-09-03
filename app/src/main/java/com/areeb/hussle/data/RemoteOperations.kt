@@ -5,12 +5,12 @@ import com.areeb.hussle.data.models.storesModule.StoresDtoItem
 import com.areeb.hussle.data.network.remote.StoresApi
 import javax.inject.Inject
 
-class RemoteOperations @Inject constructor(private val storeApi: StoresApi) : IRemoteOperations {
+class RemoteOperations @Inject constructor(private val storeApi: StoresApi) {
     companion object {
         private const val TAG = "RemoteOperations"
     }
 
-    override suspend fun getAllProducts(): Resource<List<StoresDtoItem>> {
+    suspend fun getAllProducts(): Resource<List<StoresDtoItem>> {
         return try {
             val response = storeApi.getAllProducts()
             Resource.SUCCESS(response)
@@ -20,7 +20,7 @@ class RemoteOperations @Inject constructor(private val storeApi: StoresApi) : IR
         }
     }
 
-    override suspend fun getProductById(id: Int): Resource<StoresDtoItem> {
+    suspend fun getProductById(id: Int): Resource<StoresDtoItem> {
         return try {
             val response = storeApi.getProductById(id)
             Resource.SUCCESS(response)
